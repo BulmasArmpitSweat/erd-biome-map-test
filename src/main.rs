@@ -1,5 +1,4 @@
 pub(crate) use bevy::prelude::*;
-use bevy::{core_pipeline::fullscreen_material::FullscreenMaterial, render::extract_component::ExtractComponent};
 
 fn startup(mut commands: Commands) {
     commands.spawn((
@@ -11,9 +10,11 @@ fn startup(mut commands: Commands) {
 #[derive(Component)]
 struct AppMain;
 
-#[derive(Component, ExtractComponent, Clone, Copy, Default)]
-#[extract_app(AppMain)]
-struct Shader; // Takes no parameters
+#[derive(Component, ExtractComponent, ShaderType, Default)]
+#[extract_app(RenderApp)]
+struct Shader {
+    _unused: LinearRgba
+}
 
 impl FullscreenMaterial for Shader {
     fn fragment_shader() -> bevy::shader::ShaderRef {
