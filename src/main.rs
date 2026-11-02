@@ -10,7 +10,7 @@ fn startup(mut commands: Commands) {
 #[derive(Component)]
 struct AppMain;
 
-#[derive(Component, ExtractComponent, ShaderType, Default)]
+#[derive(Component, ShaderType, Default)]
 #[extract_app(RenderApp)]
 struct Shader {
     _unused: LinearRgba
