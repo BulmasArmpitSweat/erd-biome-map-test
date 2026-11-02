@@ -1,0 +1,3 @@
+{
+    "rust-analyzer.cachePriming.numThreads": 2 // poor codespace gets pegged at 100% for ages
+}
