@@ -1,4 +1,5 @@
 pub(crate) use bevy::prelude::*;
+use bevy::render::extract_resource::ExtractResource;
 
 fn startup(mut commands: Commands) {
     commands.spawn((
@@ -10,7 +11,7 @@ fn startup(mut commands: Commands) {
 #[derive(Component)]
 struct AppMain;
 
-#[derive(Component, ShaderType, Default)]
+#[derive(Component, ExtractResource, ShaderType, Default)]
 #[extract_app(RenderApp)]
 struct Shader {
     _unused: LinearRgba
