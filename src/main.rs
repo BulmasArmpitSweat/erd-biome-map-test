@@ -1,5 +1,5 @@
 pub(crate) use bevy::prelude::*;
-use bevy::render::extract_resource::ExtractResource;
+use bevy::render::{extract_resource::ExtractResource, RenderApp};
 
 fn startup(mut commands: Commands) {
     commands.spawn((
